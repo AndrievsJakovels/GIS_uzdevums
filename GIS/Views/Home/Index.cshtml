@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Karte";
+}
+
+<div id="mapid" style="height: 800px; outline: none;"></div>
+<script>
+
+    var mymap = L.map('mapid').setView([56.95, 24.1], 13);
+    var layer =  L.tileLayer.wms ('http://new.kurtuesi.lv:8080/geoserver/gwc/service/wms?', {
+     layers: 'map:background',
+                format: 'image/png',
+                transparent: true,
+                minZoom: 7,
+                maxZoom: 19,
+
+    }).addTo(mymap);
+
+
+
+</script>
+
